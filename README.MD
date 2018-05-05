@@ -39,6 +39,12 @@ single js file , no dependencies
 
 `FORWARD_PORT` port
 
+make it executeable directly
+
+```
+echo '#!/usr/bin/env node' | cat - bundle.js > sproxy && chmod +x sproxy
+```
+
 ## thanks
 
 https://github.com/buschtoens/sni
