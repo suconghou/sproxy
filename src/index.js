@@ -4,7 +4,7 @@ import gethost from "./utils/gethost";
 import sni from "./utils/sni";
 import istls from "./utils/istls";
 import serve, { echo } from "./utils/serve";
-import forward, { fwd } from "./forward";
+import forward, { fwd, elog } from "./forward";
 
 const p = i => /^\d{1,5}$/.test(i);
 
@@ -14,8 +14,6 @@ const echoport = process.env.ECHOPORT;
 
 const f_host = process.env.FORWARD_HOST;
 const f_port = process.env.FORWARD_PORT;
-
-const elog = e => console.error(e.toString());
 
 if (p(echoport)) {
 	serve(echo).listen(echoport);
