@@ -8,7 +8,7 @@ export default (socket, data, host, port) => {
 				socket.pipe(s);
 			});
 		})
-		.on(r, elog);
+		.on(r, socket.destroy);
 };
 
 export const fwd = (socket, host, port) => {
@@ -17,7 +17,7 @@ export const fwd = (socket, host, port) => {
 			s.pipe(socket);
 			socket.pipe(s);
 		})
-		.on(r, elog);
+		.on(r, socket.destroy);
 };
 
 export const elog = e => console.error(e.toString());
