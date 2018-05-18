@@ -18,7 +18,8 @@ const f_port = process.env.FORWARD_PORT;
 if (p(echoport)) {
 	serve(echo).listen(echoport);
 } else if (f_host && p(f_port)) {
-	serve(fwd).listen(port);
+	const f = s => fwd(s, f_host, f_port);
+	serve(f).listen(port);
 } else {
 	const handler = socket => {
 		socket
