@@ -5,5 +5,7 @@ export default handler => {
 };
 
 export const echo = socket => {
-	socket.pipe(socket);
+	socket.pipe(socket).on("error", e => {
+		socket.destroy(e);
+	});
 };
