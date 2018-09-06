@@ -34,7 +34,7 @@ export default data => {
 				n += 3;
 				if (nameType === 0) {
 					if (n > end - nameLength) return null;
-					return data.toString("ascii", n, n + nameLength);
+					return data.toString('ascii', n, n + nameLength);
 				} else {
 					n += nameLength;
 				}

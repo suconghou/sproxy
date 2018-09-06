@@ -1,7 +1,7 @@
-import os from "os";
+import os from 'os';
 
-const s = ":";
-const host = "host";
+const s = ':';
+const host = 'host';
 
 export default data => {
 	const lines = data.toString().split(os.EOL);
